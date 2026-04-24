@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .front{
+        primary:#253eb;
+        bg:#faft;
+        --gitter:#ffff;
+
+    }
+    *{
+        
+        box-sizing: border-box;
+    }
+    body{
+        font-family: 'Courier New', Courier, monospace;
+        background: local;
+        color: aqua;
+    }
+
+    .page-wrapper{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--gitter);
+        max-width: 12000px;
+        margin: 0 auto;
+        padding: var(--gitter);
+    }
+    header{
+        grid-column: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--white);
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 1px,3px;
+
+    }
+
+    .search-box{
+        flex-grow: 1;
+        margin: 1rem 0;
+        min-width: 250px;
+
+    }
+
+    .sidebar{
+        background: var(--white);
+        padding: 1.5rem;
+        border-radius: 8px;
+
+    }
+    .filter-group{
+        margin-bottom: 1.5rem;
+    }
+    input(type="range"){
+        width: 100px;
+    }
+    .product-grid{
+        display: grid;
+        grid-template-columns: repeat(autofill,minmax);
+    }
+    .product-card img{
+        width: 100;
+        height: 100;
+        
+    }
+
+    </style>
+</head>
+<body>
+    
+    <aside class="sidebar"></aside>
+    <main>
+        <div class="product-grid">
+            <article class="product-card">
+                <img src=""  alt="product"></img>
+                <h3>Cloud form slides</h3>
+                <p style="color: #64748b"></p>
+            </article>
+
+        </div>
+    </main>
+</body>
+</html>

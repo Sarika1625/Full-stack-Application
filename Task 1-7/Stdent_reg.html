@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="intro">
+        <h2>Kindly read the below lines before filling</h2>
+        <ul class="add_info">
+            <li>Fill the details carefully</li>
+            <li>Changes can't be made once the form is submitted</li>
+            <li>Don't do any spelling mistakes</li>
+        </ul>
+    </div>
+
+    <div class="form">
+        <form onsubmit="return validate()"">
+        <table border ="2" >
+            <tr>
+                <th colspan="2">Personal details</th>
+
+            </tr>
+            <tr>
+                <td>First name:</td>
+                <td><input type="text" placeholder="Enter your first name:"></td>
+            </tr>
+            <tr>
+                <td>Last name:</td>
+                <td><input type="text" placeholder="Enter your Last name:"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" placeholder="Enter your Email Id:"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" placeholder="Enter your Login Password:"></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><input type="text" placeholder="Enter your Address:"></td>
+            </tr>
+            <tr>
+                <td>Pincode</td>
+                <td><input  
+                    id="pincode"
+                    placeholder="Not more ths 6 digits"
+                    maxlength="10"
+                    pattern="[0-9]{9}"
+                    required
+                    oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+
+                    
+                    <br>
+                    <span id="error" style="color: red;"></span>
+                    </td>
+            </tr>
+            <tr>
+                <td>Date of Birth:</td>
+                <td><input type="date" placeholder="Enter your Date of Birth"></td>
+            </tr>
+            <tr>
+                <td colspan="2" text-align="center">
+                    <button style="color: green;">Submit</button>
+
+                </td>
+            </tr>
+            
+
+            
+        </table>
+            
+        </form>
+
+    </div>
+    <div class="file">
+        <form>
+            <b>Upload passport size photo:</b>
+            <input type="file">
+            
+            <b>Upload Aadhar card</b>
+            <input type="file">
+
+
+        </form>
+        
+
+    </div>
+    <script>
+        function validate(input){
+            let pin = document.getElementById("pincode").value;
+            let error = document.getElementById("error");
+            if(pin.length>6){
+                error.textContent="Error happened in your pin code";
+                return false;
+            }
+            error.textContent='';
+            alert("Form submitted successfully");
+            return true;
+
+
+
+        }
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

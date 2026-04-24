@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrant Monitor</title>
+    <style>
+        body{
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            transition: background-color 0.3 ease;
+
+        }
+        #coords{
+            background: rgba(255,255,255,0.8);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="coords">
+        <h2>Move your mouse</h2>
+        <p id="display">x:0,y:0</p>
+        <p id="quadrant">Quadrant:-</p>
+    </div>
+    <script>
+        {
+            const diaplay = document.getElementById('display');
+            const quadDisplay = document.getElementById('quadrant');
+            const body=document.body;
+            window.addEventListener('mousemove',(e) =>{
+                const x=e.clientx;
+                const y=e.clientY;
+
+                const centerX=window.innerWidth/2;
+                const centerY=window.innerWidth/2;
+
+                let quadrant=" ";
+                let color=" ";
+
+                if(x<centerX && y<centerY){
+                    quadrant = "Top-Left";
+                    color = "#ffadad";
+                }else if(x>=centerX && y >=centerY){
+                    quadrant = "Bottom-Left";
+                    color="#fdffb6";
+
+                }else if(x<=centerX && y >=centerY){
+                    quadrant = "top-right";
+                    color="yellow";
+
+                }
+                
+                else{
+                    quadrant="Bottom-roght";
+                    color=""
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>

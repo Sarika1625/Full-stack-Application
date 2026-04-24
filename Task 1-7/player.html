@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #player{
+        width: 50px;
+        height: 50px;
+        background-color: #FF5733;
+        border-radius: 50%;
+        position: absolute;
+        transition: 0.1s;
+    }
+</style>
+<body>
+    <h1>Key pad operator</h1>
+    <div id="player" style="border-radius: 50; background: red; display: inline-block;"></div>
+    <script>
+        let posx=100;
+        let posy=100;
+        const step=20;
+        const player=document.getElementById('player');
+        window.addEventListener('Keyboard',(event))
+        {
+            const key =  event.key;
+            if(key === 'Arrowup') 
+                posy -=step;
+            if(key === 'ArrowDown')
+                pos+=step;
+            if(key === 'ArrowRight')
+                pox+=step;
+            player.style.top='${posy}px';
+            player.style.left='${posx}px';
+
+
+
+
+            };
+        
+    </script>
+    
+</body>
+</html>

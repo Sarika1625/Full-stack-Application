@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="lab-container">
+        <h2 id="maim-title">color palettte lab</h2>
+        <div class="swatch" style="width:50px;height: 50px;background: red;display: inline-block;"></div>
+        <div class="swatch" style="width:50px;height: 50px;background: blue;display: inline-block;"></div>
+        <div class="swatch" style="width:50px;height: 50px;background: green;display: inline-block;"></div>
+        <br><br>
+
+        <button>Round corners</button>
+        <button>Add borders</button>
+        <button class="reset-triggers">Reset All</button>
+
+    </div>
+
+    <script>
+        {
+            //1.getElementBYid:Targeting the specific title
+            const title = document.getElementById('main-title');
+            //getElementsBy class name:Targeting color buttons
+            const swatches = document.getElementsByClassName('swatch');
+            const btns=document.getElementsByTagName('button');
+            const resetBtns=document.querySelector('.reset-trigger');
+            const allSwatches = document.querySelector('.reset-trigger');
+            //logic
+            btns[0].onclick=()=>{
+                for(let s of swatches) s.style.borderRadius = "20%" ,"20%","20%","20%";
+                title.innerText = "Rounded Palette";
+            };
+            btns[1].onclick=()=>{
+                for(let s of swatches) s.style.border = "5px solid black";
+
+            };
+            resetBtn.onclick=()=>{
+                allSwatches.forEach(s=>{
+                    s.style.borderRadius="0";
+                    s.style.border ="none";
+                });
+                title.innerText = "Color Palette Lab";
+            };
+        }
+    </script>
+</body>
+</html>

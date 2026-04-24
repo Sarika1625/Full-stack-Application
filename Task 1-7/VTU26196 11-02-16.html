@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="ScoreBoard">
+        <h2>Live match Score</h2>
+        <div>
+            <span id="home-display">0</span> : <span id="away-display"></span>
+        </div>
+        <button onclick="scoreGoal('home')">Home Goal</button>
+        <button onclick="scoreGoal('away')">Away Goal</button>
+        <button onclick="resetmatch()">Reset</button>
+
+    </div>
+    <script>
+        {
+            let homeScore =0;
+            let awayScore= 0;
+
+            const homeE1=document.getElementById('home-display');
+            const awayE1=document.getElementById('away-display');
+
+            window.scoreGoal = (team)=>{
+                if(team == 'home'){
+                    homeScore++;
+                    homeE1.textContent =homeScore;
+                }else{
+                    awayScore++;
+                    awayE1.textContent = awayScore;
+                }
+            };
+            
+            window.resetMatch=()=>{
+                homeScore =0;
+                awayScore =0;
+                homeE1.textContent =0;
+            };
+        }
+    </script>
+</body>
+</html>
