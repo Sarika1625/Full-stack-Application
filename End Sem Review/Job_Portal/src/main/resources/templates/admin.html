@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Admin</title>
+
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: white;
+    margin: 0;
+}
+s
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background: #2a5298;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #2a5298;
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+input, select {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+form {
+    text-align: center;
+}
+</style>
+
+</head>
+
+<body>
+	<div style="display:flex; justify-content:space-between; align-items:center; padding:10px 20px; background:#2a5298; color:white;">
+	    <span style="font-size:18px;">Job Portal</span>
+	    <a href="/" style="color:white; text-decoration:none; font-weight:bold;">Home</a>
+	</div>
+
+	<h2>Admin Portal</h2>
+
+	<!-- Add Job -->
+	<form action="/admin/addJob" method="post">
+
+	<input name="companyName" placeholder="Company Name"><br>
+	<input name="title" placeholder="Job Title"><br>
+	<input name="description" placeholder="Job Description"><br>
+	<input name="skills" placeholder="Skills Required"><br>
+	<input name="location" placeholder="Location"><br>
+	<input name="salary" placeholder="Salary"><br>
+
+	<button>Add Job</button>
+	</form>
+
+	<hr>
+
+	<!-- Job List -->
+	<table border="1">
+	<tr>
+	<th>Company</th>
+	<th>Title</th>
+	<th>Description</th>
+	<th>Skills</th>
+	<th>Location</th>
+	<th>Salary</th>
+	<th>Action</th>
+	</tr>
+
+	<tr th:each="j : ${jobs}">
+	<td th:text="${j.companyName}"></td>
+	<td th:text="${j.title}"></td>
+	<td th:text="${j.description}"></td>
+	<td th:text="${j.skills}"></td>
+	<td th:text="${j.location}"></td>
+	<td th:text="${j.salary}"></td>
+	<td>
+	    <a th:href="@{'/admin/edit/' + ${j.id}}">Edit</a> |
+	    <a th:href="@{'/admin/delete/' + ${j.id}}">Delete</a>
+	</td>
+
+	<td>
+	<a th:href="@{'/admin/delete/' + ${j.id}}">Delete</a>
+	</td>
+
+	</tr>
+	</table>
+
+	<br>
+	<a href="/admin/applications">View Applications</a>
+</html>

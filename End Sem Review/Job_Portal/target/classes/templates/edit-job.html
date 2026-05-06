@@ -1,0 +1,89 @@
+<head>
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background: #2a5298;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #2a5298;
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+input, select {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+form {
+    text-align: center;
+}
+</style>
+<head>
+	<div style="display:flex; justify-content:space-between; align-items:center; padding:10px 20px; background:#2a5298; color:white;">
+	    <span style="font-size:18px;">Job Portal</span>
+	    <a href="/" style="color:white; text-decoration:none; font-weight:bold;">Home</a>
+	</div>
+
+<h2>Edit Job</h2>
+
+<form action="/admin/updateJob" method="post">
+
+<input type="hidden" name="id" th:value="${job.id}">
+
+<input name="companyName" th:value="${job.companyName}">
+<input name="title" th:value="${job.title}">
+<input name="description" th:value="${job.description}">
+<input name="skills" th:value="${job.skills}">
+<input name="location" th:value="${job.location}">
+<input name="salary" th:value="${job.salary}">
+
+<button>Update</button>
+
+</form>

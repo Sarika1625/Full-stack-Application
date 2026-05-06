@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NextHire - Smart Job Portal</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: white;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 60px;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00c6ff;
+        }
+
+        .nav-links a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 60px;
+        }
+
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            margin-right: 15px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .user-btn {
+            background: #00c6ff;
+            color: white;
+        }
+
+        .admin-btn {
+            background: #ff7e5f;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .hero img {
+            width: 400px;
+            border-radius: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* FEATURES */
+        .features {
+            text-align: center;
+            padding: 60px 20px;
+            background: #f4f6f9;
+            color: black;
+        }
+
+        .features h2 {
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        .feature-box {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            width: 250px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+            color: #aaa;
+        }
+
+    </style>
+</head>
+
+<body>
+	<div style="display:flex; justify-content:space-between; align-items:center; padding:10px 20px; background:#2a5298; color:white;">
+	    <span style="font-size:18px;">Job Portal</span>
+	    <a href="/" style="color:white; text-decoration:none; font-weight:bold;">Home</a>
+	</div>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">NextHire</div>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Jobs</a>
+    </div>
+</div>
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <div class="hero-text">
+        <h1>Find Your Dream Job Today 🚀</h1>
+        <p>
+            Welcome to <b>NextHire</b> — your smart job portal designed to connect talented individuals 
+            with top companies. Explore thousands of job opportunities, apply easily, and track your 
+            application status in real-time.
+        </p>
+
+        <p>
+            Whether you're a student, fresher, or professional — your next career move starts here.
+        </p>
+
+        <a href="/user/jobs">
+            <button class="btn user-btn">Explore Jobs</button>
+        </a>
+
+        <a href="/admin">
+            <button class="btn admin-btn">Admin Portal</button>
+        </a>
+    </div>
+
+    <!-- IMAGE -->
+    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
+</div>
+
+<!-- FEATURES -->
+<div class="features">
+    <h2>Why Choose NextHire?</h2>
+
+    <div class="feature-box">
+
+        <div class="card">
+            <h3>🔍 Smart Search</h3>
+            <p>Filter jobs by location, skills, and experience easily.</p>
+        </div>
+
+        <div class="card">
+            <h3>📄 Easy Apply</h3>
+            <p>Upload your resume and apply in just one click.</p>
+        </div>
+
+        <div class="card">
+            <h3>📊 Track Status</h3>
+            <p>Know if you're shortlisted or rejected instantly.</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    © 2026 NextHire | Designed for Smart Careers 💼
+</div>
+
+</body>
+</html>

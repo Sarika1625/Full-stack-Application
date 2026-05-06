@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Jobs</title>
+
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background: #2a5298;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #2a5298;
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+input, select {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+form {
+    text-align: center;
+}
+</style>
+
+
+</head>
+
+<body>
+	<div style="display:flex; justify-content:space-between; align-items:center; padding:10px 20px; background:#2a5298; color:white;">
+		    <span style="font-size:18px;">Job Portal</span>
+		    <a href="/" style="color:white; text-decoration:none; font-weight:bold;">Home</a>
+		</div>
+	<div style="text-align:center; margin:20px;">
+	    <a href="/user">
+	        <button>Application status</button>
+	    </a>
+	</div>
+	
+
+<h2>Available Jobs</h2>
+
+<form method="get" action="/user/jobs">
+    <input type="text" name="location" placeholder="Search by location">
+    <button type="submit">Search</button>
+</form>
+
+<br><br>
+
+<table>
+	<tr>
+	<th>Company</th>
+	<th>Title</th>
+	<th>Location</th>
+	<th>Apply</th>
+	</tr>
+
+	<tr th:each="j : ${jobs}">
+	<td th:text="${j.companyName}"></td>
+	<td th:text="${j.title}"></td>
+	<td th:text="${j.location}"></td>
+
+	<td>
+	<a th:href="@{'/user/apply/' + ${j.id}}">
+	<button>Apply</button>
+	</a>
+	</td>
+	</tr>
+</table>
+
+</body>
+</html>
